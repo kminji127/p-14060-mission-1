@@ -43,8 +43,8 @@ public class Main {
             if (cmd.equals("목록")) {
                 System.out.println("번호 / 작가 / 명언");
                 System.out.println("----------------------");
-                wiseSayingList.sort((q1, q2) -> q2.id - q1.id);
-                for (WiseSaying wiseSaying : wiseSayingList) {
+                for (int i = wiseSayingList.size() - 1; i >= 0; i--) {
+                    WiseSaying wiseSaying = wiseSayingList.get(i);
                     System.out.println(wiseSaying.id + " / " + wiseSaying.author + " / " + wiseSaying.content);
                 }
             }
