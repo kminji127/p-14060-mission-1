@@ -91,8 +91,19 @@ public class Main {
                         System.out.print("작가 : ");
                         String newAuthor = sc.nextLine();
                         wiseSaying.author = newAuthor;
-                    } else {
-                        System.out.println(targetId + "번 명언은 존재하지 않습니다.");
+                        break;
+
+                        // 파일 내용 바꾸기
+                        Path wiseSayingPath = Paths.get(String.valueOf(basePath), "%d.txt".formatted(i));
+                        File wiseSayingFile = new File(wiseSayingPath.toString());
+                        String json = "{\n  \"id\": %d,\n  \"content\": \"%s\",\n  \"author\": \"%s\"\n}".formatted(i, newContent, newAuthor);
+                        try {
+                            FileWriter fileWriter = new FileWriter(wiseSayingFile);
+                            fileWriter.write(json);
+                            fileWriter.close();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
                 }
                 if (!isFound) {
