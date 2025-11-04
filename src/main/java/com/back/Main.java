@@ -72,10 +72,9 @@ public class Main {
                 // id 파악
                 int targetId = Integer.parseInt(cmd.substring(6));
                 // 해당 id에 해당하는 리스트 원소가 있으면 수정
-                for (int i = 0; i < wiseSayingList.size(); i++) {
-                    if (wiseSayingList.get(i).id == targetId) {
+                for (WiseSaying wiseSaying : wiseSayingList) {
+                    if (wiseSaying.id == targetId) {
                         isFound = true;
-                        WiseSaying wiseSaying = wiseSayingList.get(i);
                         System.out.println("명언(기존): " + wiseSaying.content);
                         System.out.print("명언 : ");
                         String newContent = sc.nextLine();
