@@ -19,7 +19,7 @@ public class Main {
         while (true) {
             // 명령어 입력
             System.out.print("명령 : ");
-            String cmd = sc.nextLine();
+            String cmd = sc.nextLine().trim(); // 양옆 공백 제거
 
             // 종료 조건
             if (cmd.equals("종료")) {
