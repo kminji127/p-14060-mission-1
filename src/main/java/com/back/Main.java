@@ -24,9 +24,7 @@ public class Main {
             // 종료 조건
             if (cmd.equals("종료")) {
                 break;
-            }
-
-            if (cmd.equals("등록")) {
+            } else if (cmd.equals("등록")) {
                 // 명언, 작가 입력
                 System.out.print("명언 : ");
                 String content = sc.nextLine().trim();
@@ -47,9 +45,7 @@ public class Main {
                     WiseSaying wiseSaying = wiseSayingList.get(i);
                     System.out.println(wiseSaying.id + " / " + wiseSaying.author + " / " + wiseSaying.content);
                 }
-            }
-
-            if (cmd.startsWith("삭제?id=")) {
+            } else if (cmd.startsWith("삭제?id=")) {
                 // id 파악
                 int targetId = Integer.parseInt(cmd.substring(6));
 
@@ -70,9 +66,7 @@ public class Main {
                     // 리스트가 빈 값이라도 예외 처리
                     System.out.println(targetId + "번 명언은 존재하지 않습니다.");
                 }
-            }
-
-            if (cmd.startsWith("수정?id=")) {
+            } else if (cmd.startsWith("수정?id=")) {
                 // 탐색 여부
                 boolean isFound = false;
                 // id 파악
