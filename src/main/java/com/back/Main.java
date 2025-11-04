@@ -18,7 +18,7 @@ public class Main {
         // 종료하기 전까지 반복
         while (true) {
             // 명령어 입력
-            System.out.print("명령 : ");
+            System.out.print("명령) ");
             String cmd = sc.nextLine().trim(); // 양옆 공백 제거
 
             // 종료 조건
@@ -29,10 +29,10 @@ public class Main {
             if (cmd.equals("등록")) {
                 // 명언, 작가 입력
                 System.out.print("명언 : ");
-                String content = sc.nextLine();
+                String content = sc.nextLine().trim();
 
                 System.out.print("작가 : ");
-                String author = sc.nextLine();
+                String author = sc.nextLine().trim();
 
                 // 등록
                 id++;
