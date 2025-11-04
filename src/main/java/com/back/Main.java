@@ -73,11 +73,14 @@ public class Main {
             }
 
             if (cmd.startsWith("수정?id=")) {
+                // 탐색 여부
+                boolean isFound = false;
                 // id 파악
                 int targetId = Integer.parseInt(cmd.substring(6));
                 // 해당 id에 해당하는 리스트 원소가 있으면 수정
                 for (int i = 0; i < wiseSayingList.size(); i++) {
                     if (wiseSayingList.get(i).id == targetId) {
+                        isFound = true;
                         WiseSaying wiseSaying = wiseSayingList.get(i);
                         System.out.println("명언(기존): " + wiseSaying.content);
                         System.out.print("명언 : ");
@@ -91,6 +94,9 @@ public class Main {
                     } else {
                         System.out.println(targetId + "번 명언은 존재하지 않습니다.");
                     }
+                }
+                if (!isFound) {
+                    System.out.println(targetId + "번 명언은 존재하지 않습니다.");
                 }
             }
         }
